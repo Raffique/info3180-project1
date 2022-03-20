@@ -7,7 +7,7 @@
         {% set count = 0 %}
         {% for file in files %}
             <div style="display: inline-block; margin: 10px;" >
-                <div class="card" style="width:300px">
+                <div class="card" style="width:300px; height: 430px;">
                     <img class="card-img-top" style="width: 300px; height: 200px;" src="{{ url_for('get_image', filename=file.img) }}" alt="Card image">
                     <div class="card-body">
                         <h5 class="card-title">{{ file.title }}</h5>
