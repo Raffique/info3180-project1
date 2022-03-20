@@ -80,8 +80,8 @@ def create():
             file = form.photo.data
 
             filename = secure_filename(file.filename)
-            #file.save(os.path.join(os.getcwd(), app.config.get('UPLOAD_FOLDER')))
-            file.save(app.config.get('UPLOAD_FOLDER'))
+            file.save(os.path.join(os.getcwd(), app.config.get('UPLOAD_FOLDER')))
+            #file.save(app.config.get('UPLOAD_FOLDER'))
 
 
             property = Property(title=title, beds=beds, baths=baths, location=location, price=price, type_=type_, description=description, img=filename)
