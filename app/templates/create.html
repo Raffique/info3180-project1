@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div style="max-width:max-content; margin: auto;" >
+        <h1 style="margin-bottom: 20px; margin-top: 10px;">Add New Property</h1>
+        <div style="background-color: white;">
+
+            <form method="POST" action="{{ url_for('create') }}" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+            
+                <div class="form-group" style="width: 500px; margin-bottom: 15px; margin-top: 15px;" >
+                    {{ form.title.label }}
+                    {{ form.title(class_='form-control', placeholder="Please enter title", size=30) }}
+                </div>
+    
+                <div class="form-group" style="width: 500px; margin-bottom: 15px; margin-top: 15px;">
+                    {{ form.description.label }}
+                    {{ form.description(class_='form-control', placeholder="Description of property", size=30) }}
+                </div>
+    
+                <div>
+                    <div style="display: inline-flex; margin-bottom: 15px; margin-top: 15px;">
+    
+                        <div class="form-outline" style="width: 200px; margin-right: 50px;" >
+                            {{form.beds.label}}
+                            {{form.beds(class='form-control')}}
+                        </div>
+            
+                        <div class="form-outline" style="width: 200px; margin-left: 50px;">
+                            {{form.baths.label}}
+                            {{form.baths(class='form-control')}}
+                        </div>
+        
+                    </div>
+                </div>
+                
+    
+                <div>
+                    <div style="display: inline-flex; margin-bottom: 15px; margin-top: 15px;">
+    
+                        <div class="form-outline" style="width: 200px; margin-right: 50px;">
+                            {{form.price.label}}
+                            {{form.price(class='form-control')}}
+                        </div>
+                    
+                        <div class="form-group boxs" style="width: 200px; margin-left: 50px;">
+                            {{ form.type_.label }}
+                            {{ form.type_(class_='form-control') }}
+                        </div>
+        
+                    </div>
+                </div>
+                
+                
+    
+                <div style="width: 400px; margin-bottom: 15px; margin-top: 15px;">
+                    <div class="form-group boxs">
+                        {{ form.location.label }}
+                        {{ form.location(class_='form-control') }}
+                    </div>
+                </div>
+                
+                <div style="width: 400px; margin-bottom: 15px; margin-top: 15px;">
+                    <div class="form-group">
+                        {{ form.photo.label(class_='form-label') }}
+                        {{ form.photo(class_='form-control', placeholder='Browse') }}
+                    </div>
+                </div>
+                
+    
+            
+                <button class="btn btn-primary" type="submit" style="margin-top: 10px; margin-bottom: 10px;">Add Property</button>
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}

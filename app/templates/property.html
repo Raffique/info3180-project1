@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div style="margin: 25px;">
+        <div  style="width: 1400px; height: 480px; border: 2px solid grey;">
+            <div style="display: flex;" >
+                <div style=" width: 680px; height: 480px; ">
+                    
+                        <img style="width: 678px; height: 478px;"  src="{{ url_for('get_image', filename=file.img) }}" alt="Image of Property">
+                    
+                </div>
+                <div class="" style=" width: 680px; height: 480px; padding: 20px;">
+                    <div class="">
+                        <h5 class="">{{file.title}}</h5>
+                        <div>
+                            <div class="pricetag" style="display: inline-block;">${{ file.price }}</div>
+                            {% if file.type_ == 1 %}
+                                <div class="typetag" style="display: inline-block;"> Home </div>
+                            {% else %}
+                                <div class="typetag" style="display: inline-block;"> Apartment </div>
+                            {% endif %}
+                        </div>
+                        <p style="margin: 10px; border: 1px solid green; height: 210px;">{{file.description}}</p>
+                        <div>
+                            <div style="display: inline-block; margin: 10px;"> <i class="fa fa-bed"></i> {{file.beds}} Bedrooms</div>
+                            <div style="display: inline-block; margin: 10px;"> <i class="fa fa-bath"></i> {{file.baths}} Bathrooms</div>
+                        </div>
+                        <div style="margin: 5px;" >
+                            <span class=""> <i class="fa fa-map-marker" style="font-size:24px"></i> {{ file.location }}</span>
+                        </div>
+                        
+                        <button class="btn btn-primary" style="margin: 10px;" onclick="email()">Email Realtor</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function email(){
+            alert('Realtor currently unavailable!');
+        }
+    </script>
+{% endblock %}
