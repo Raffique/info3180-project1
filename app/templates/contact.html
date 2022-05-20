@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block main %}
+<style>
+    .boxs{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 500px;
+    }
+
+    .txtarea{
+        height: 200px;
+    }
+</style>
+<div style="padding: 80px;">
+    <h1>Contact Form</h1>
+<br>
+<div style="margin-bottom: 30px;">
+    <span>Fill in this form to contact the site owners</span>
+</div>
+
+<form method="POST" action="/contact/">
+    {{ form.csrf_token }}
+
+    <div class="form-group boxs">
+        {{ form.name.label }}
+        {{ form.name(class_='form-control', placeholder="Please enter your name", size=30) }}
+    </div>
+    
+    <div class="form-group boxs">
+        {{ form.email.label }}
+        {{ form.email(class_='form-control', placeholder="Please enter your e-mail address", size=30) }}
+    </div>
+
+    <div class="form-group boxs">
+        {{ form.subject.label }}
+        {{ form.subject(class_='form-control', placeholder="Please enter the subject for your message", size=30) }}
+    </div>
+
+    <div class="form-group boxs" style="width: 650px;">
+        {{ form.message.label }}
+        {{ form.message(class_='form-control txtarea', placeholder="Please enter the message you would like to send", size=100) }}
+    </div>
+
+    <button class="btn btn-primary" onclick="email()" type="submit">Send</button>
+    </form>
+</div>
+
+
+    <script>
+        function email(){
+            alert('meassage sent');
+        }
+    </script>
+{% endblock %}

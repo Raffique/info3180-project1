@@ -12,7 +12,7 @@ from app import app
 from flask import render_template, request, redirect, url_for, flash, Response, send_file
 from flask.helpers import send_from_directory
 from werkzeug.utils import secure_filename
-from app.forms import PropertyForm
+from app.forms import PropertyForm, ContactForm
 from app.models import Property
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy(app)
@@ -47,6 +47,16 @@ def about():
 ###
 # The functions below should be applicable to all Flask apps.
 ###
+
+@app.route('/contact/', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            flash('Message Sent!')
+            return redirect('/')
+    """Render the website's about page."""
+    return render_template('contact.html', form=form)
 
 @app.route('/properties')
 def properties():
