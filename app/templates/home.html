@@ -5,10 +5,193 @@
 {% endblock %}
 
 {% block main %}
-<div class="p-5 mb-4 bg-light rounded-3 border">
-  <div class="container-fluid py-5">
-    <h1 class="display-5 fw-bold">Hello, world!</h1>
-    <p>This is a simple starter template for a Flask Application</p>
+<div style="
+        display: flex;
+        margin-top: 50px;
+        min-height: 450px; 
+        border: 2px solid gray; 
+        background-image: url('/static/images/banner2.jpg'); 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        color: white;
+        ">
+        <h1 style="vertical-align: middle;">Pulmonary Embolism Detector</h1>
+        </div>
+        <div >
+<div class="container">
+  <div class="p-5 mb-4  bg-light rounded-3 border" style="">
+    <div  style="display: flex;">
+
+      <div style="padding: 25px;">
+        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Rem, ullam quo voluptate officiis molestias assumenda iste ipsum, 
+        praesentium delectus, dolore reiciendis at voluptatum eligendi 
+        a non nam. Accusantium, reiciendis non? -->
+        <img src="/static/images/software5.png" alt="" style="">
+      </div>
+
+      <div style="padding: 25px;">
+        <h1>PE Detector Software</h1>
+        <p style="font-size: 20px;">
+          Our Pulmonary Embolism (PE) Detector software is an AI-based system 
+          that provides Pulmonary Embolism detection and localization for the medical clients, 
+          specifically for doctors and radiologist. 
+          This product aims to produces a 95% accuracy in the detection of PE.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+<!-- -------------------------------SOFTWARE HOW it works--------------------------------------------------- -->
+  <div style="display: flex; min-height: 100px; padding: 10px;">
+    <div>
+      <h1>Software</h1>
+      
+      <div style="
+      padding: 20px; 
+      margin-left: 80px; 
+      border: 1px solid gray; 
+      max-width: 530px; 
+      border-radius: 25px; 
+      background-color: gray;
+      color: white;">
+        <h3>Easy to use in just 3 steps:</h3>
+        <ul>
+          <li><h5>Select files or folders containing DICOM images</h5></li>
+          <li><h5>Start detection scan</h5></li>
+          <li><h5>View reports</h5></li>
+        </ul>
+      </div>
+      
+      <div style="
+      margin: 10px; 
+      margin-top: 50px;
+      border: 1px solid gray;
+      margin-left: 80px;
+      border-radius: 25px;
+      max-width: 530px;
+      padding: 20px;
+      ">
+        <h3>File sorter</h3>
+        <div style="display: flex;">
+          <h5>Sorts through files to find DICOM sequences of axial slices</h5>
+          <img src="/static/images/scanner.gif" alt="" style="width: 170px; height: 170px;">
+        </div>
+        
+      </div>
+
+      <div style="
+      border: 1px solid gray;
+      margin: 10px;
+      margin-top: 50px;
+      margin-left: 80px;
+      padding: 20px;
+      border-radius: 25px;
+      background-color: grey;
+      color: white;
+      ">
+        <h3>Lungs Localizer</h3>
+        <h5>Filter out images that dont have enough or any of the lungs organ</h5>
+        <div style="display: flex;">
+          <img src="/static/images/localizer.png" alt="" style="width: 680px; height: 340px; margin: 20px;">
+          <img src="/static/images/lungs.gif" alt="" style="width: 300px; height: 300px; margin: 20px;">
+        </div>
+      </div>
+
+      <div style="
+      border: 1px solid gray; 
+      margin: 10px; 
+      margin-top: 50px; 
+      margin-left: 80px;
+      padding: 20px;
+      border-radius: 25px;
+      background-color: gray;" >
+        <h3>2.5D image Transformer</h3>
+        <h5 style="margin-bottom: 20px;">techniques used to cause images or scenes to simulate the appearance of being three-dimensional (3D)</h5>
+        <img src="/static/images/fuse1.png" alt="" style="margin-left: 40px; width: 680px; height: 340px;">
+        
+        <div style="display: flex; margin-left: 40px;">
+          <img src="/static/images/pegray.gif" alt="" style="width: 340px; height: 340px; margin: 20px;">
+          <img src="/static/images/pefuse.gif" alt="" style="width: 340px; height: 340px; margin: 20px;">
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+<!-- -------------------------------Results--------------------------------------------------- -->
+  <div style=" 
+  min-height: 100px; 
+  text-align: center;
+  margin-top: 40px;">
+    <div>
+      <h1>Results</h1>
+    </div>
+    
+    <div style="display: flex; justify-content: center;">
+
+      <div style="width: 400px; height: 500px; margin: 10px; border: 1px solid gray; border-radius: 25px; background-color: gray;">
+        <img src="/static/images/report.png" alt="" style="width: 340px; height: 340px;">
+        <h4 style="margin:25px; margin-top:50px;" >PDF and CSV with tabulated predictions</h4>
+      </div>
+
+      <div style="width: 400px; height: 500px; margin: 10px; border: 1px solid gray; border-radius: 25px; background-color: gray;">
+        <img src="/static/images/pemask.png" alt="" style="width: 340px; height: 340px;">
+        <h4 style="margin:25px; margin-top:50px;" >Predicted Locations of PE and probability</h4>
+      </div>
+
+      <div style="width: 400px; height: 500px; margin: 10px; border: 1px solid gray; border-radius: 25px; background-color: gray;">
+        <img src="/static/images/lungs2.png" alt="" style="width: 340px; height: 340px;">
+        <h4 style="margin:25px; margin-top:50px;" >3D view of Lungs for viewing</h4>
+      </div>
+
+    </div>
+
+  </div>
+<!-- -------------------------------what is PE--------------------------------------------------- -->
+  <div style="display: flex; border: 2px solid gray; min-height: 100px; margin-top: 40px; padding: 20px; border-radius: 25px; background-color: gray;">
+    <div style="padding: 20px;">
+      <h1>Medical Info</h1>
+      <p>
+        A pulmonary embolism (PE) is a blood clot that develops in a blood vessel in the body (often in the leg). 
+        It then travels to a lung artery where it suddenly blocks blood flow. Blood clotting is a normal process to prevent bleeding. 
+        The body makes blood clots and then breaks them down. 
+        The body does not always break down a clot and this can lead to serious health issues. 
+        Slowed blood flow, an abnormality in clot forming, 
+        or an injury to the blood vessel wall are common causes of blood clots.
+      </p>
+    </div>
+    
+    <div>
+      <img src="/static/images/pe2.jpg" alt="pe image" style="width: 400px; height: 300px;">
+    </div>
+
+  </div>
+  <!-- -------------------------------Artifical intelligence--------------------------------------------------- -->
+  <div style="display: flex; border: 2px solid gray; min-height: 100px; margin-top: 40px; padding: 20px; border-radius: 25px; background-color: gray;">
+    <div style="padding: 20px;">
+      <h1>Artificial Intelligence</h1>
+      <p>
+        Using a Convolutional Neural Network (CNN) based algorithm, the PE detector, which used primarily by radiologists, 
+        is responsible for identifying the presence of PE for CTPA scanned, hospitalized clients or patients.
+       </p>
+      <span>The main benefit offered by the PE detector is that it addresses:</span>
+      <ul>
+        <li>the issues of the unavailability of Radiologists in the medical facilities</li>
+        <li>the likeliness of human errors and the inefficient detection of PE, which can gravely affect patients.</li>
+      </ul>
+    </div>
+    
+    <div>
+      <img src="/static/images/ai4.gif" alt="ai pic" style="width: 400px; height: 300px;">
+    </div>
+
   </div>
 </div>
 {% endblock %}
